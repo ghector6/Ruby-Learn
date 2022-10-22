@@ -56,9 +56,12 @@ end
 
 
 if __FILE__ == $0
-
+    # p __FILE__
     input = File.read("input2.txt")
     # puts input.split("")
     test1 = Coordinates.new(input, [[0,0]])
     p test1.recorridoSanta_Robot
+    puts "ejecutando desde adentro"
+else
+    puts "ejecutando desde otro archivo"
 end

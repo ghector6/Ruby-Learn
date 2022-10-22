@@ -46,6 +46,7 @@ class Coordinates2
             @visitedHomes << instructions(arrow)
         end
         return @visitedHomes.uniq.size()
+    end
 
     
 end
@@ -53,6 +54,6 @@ end
 if __FILE__ == $0
     input_chido = File.read("inputreverse.txt")
     test2 = Coordinates2.new(input_chido)
-    puts test2.route
+    p test2.robo_route
     
 end

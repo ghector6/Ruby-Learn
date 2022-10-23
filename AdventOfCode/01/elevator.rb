@@ -17,7 +17,8 @@ class Elevator
 end
 
 if __FILE__ == $0
-    final_floor = Elevator.new("(())")
+    input_day1_pt1 = File.read("inputday1.txt")
+    final_floor = Elevator.new(input_day1_pt1)
     puts final_floor.counter
 else
     puts "Ejecutando desde las pruebas"

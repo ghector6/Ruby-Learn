@@ -1,7 +1,8 @@
 class Nice_Strings
     def initialize(strings)
         @strings = strings
-    end    
+        
+    end
 
     def nice?
         #c1 = !!(@strings.match (/([aeiuo][^aeiou]*[aeiou][^aeiou]*[aeiou])/))
@@ -9,26 +10,41 @@ class Nice_Strings
         c2 = (@strings.match?  /([a-z])\1/ )
         c3 = !(@strings.match? /(ab)|(cd)|(pq)|(xy)/ )
         return c1 && c2 && c3
-        # if ((@strings.scan /[aeiou]/).size >=3) && (@strings.match /([a-z])\1/ )
-        #     puts "pretty string"
-        # end
-        # if 
-        #     puts "cumple 2"
-        # end
-        # if (@strings.match /(ab)|(cd)|(pq)|(xy)/ )
-        #     puts "no cumple 3"
-        # else
-        #     puts "cumple 3"
-        # end
-        
-        
-    
-    end      
-    
+    end
+
+    def nicer?
+        nicer_pair = @strings.match? /([a-zA-Z][a-zA-Z]).*\1/
+        divided_letter  = @strings.match? /([a-zA-Z])[a-zA-Z]\1/
+
+        return nicer_pair && divided_letter
+
+
+    end
+
+    def counter(nice_list)
+        nice_list = nice_list.collect do |string|
+            @strings = string
+            nice? ? 1:0
+        end
+        nice_list.sum
+    end
+    def nicer_counter(nice_list)
+        nice_list = nice_list.collect do |string|
+            @strings = string
+            nicer? ? 1:0
+        end
+        nice_list.sum
+    end
 end
 if __FILE__ == $0
     test1 = Nice_Strings.new("ugknbfddgicrmopnab")
-    puts test1.nice?
+    nice_list = File.readlines("inputday5.txt")
+    #puts test1.counter(nice_list)
+    puts test1.nicer_counter(nice_list)
+
+    # puts nice.sum
+
+    #puts test1.nice?
     #  class string
     #      def self.nice?
     #          a = self 

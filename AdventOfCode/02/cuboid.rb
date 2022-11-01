@@ -3,7 +3,7 @@ class Cuboid
         @line = line.scan(/\d+/)
     end
 
-    def digits
+    def getInteger
         parsed_nums = @line.collect do |p|
             p.to_i
         end

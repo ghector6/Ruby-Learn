@@ -1,16 +1,13 @@
 class Cuboid 
     def initialize(line)
         @line = line.scan(/\d+/)
-        @parsed_nums = []
-        @area = []
-
     end
 
     def getInteger
-        @parsed_nums = @line.collect do |p|
+        parsed_nums = @line.collect do |p|
             p.to_i
         end
-        @parsed_nums 
+        parsed_nums 
     end
 
       def getMaths

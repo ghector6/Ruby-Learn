@@ -19,4 +19,10 @@ RSpec.describe Cuboid do
             expect(cuboid.getMaths).to eq(43)
         end
     end
+    context 'Find the size needed for the ribbon with the given instruction.' do
+        it 'should return an array in order' do
+            cuboid = Cuboid.new('2x3x4')
+            expect(cuboid.getRibbon).to eq(34)
+        end
+    end
 end

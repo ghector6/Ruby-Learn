@@ -14,10 +14,13 @@ class Cuboid
         area = getInteger.insert(-1,getInteger[0]).each_cons(2).map {|m| m.reduce(:*)}
         p (area.sum * 2 ) + area.min
      end
+     
 end
 
 
 if __FILE__ == $0
-  present = Cuboid.new("2x3x4")
-  present.getMaths
+    input_lines = File.readlines('input.txt')
+
+    present = Cuboid.new(input_lines.to_s)
+    present.getMaths
 end

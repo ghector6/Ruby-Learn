@@ -1,0 +1,3 @@
+[submodule "ruby_studio"]
+	path = ruby_studio
+	url = ./ruby_studio
